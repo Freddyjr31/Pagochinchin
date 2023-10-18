@@ -1,0 +1,42 @@
+
+<div class="bg-white rounded-md py-2 shadow-md">
+    <p class="font-light py-3 px-8 text-lg">Mis billeteras o cuentas</p>
+  <div class="mat-elevation-z0">
+    <table mat-table [dataSource]="dataSource" matSort>
+      <ng-container matColumnDef="moneda">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Moneda </th>
+        <td mat-cell *matCellDef="let row"> 
+            <span class="inline-block align-middle" [innerHTML]="row.icon"></span>
+            <span class="inline-block align-middle ms-1"> {{ row.moneda}} </span>
+        </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="total">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Total </th>
+        <td mat-cell *matCellDef="let row"> {{row.total}} </td>
+      </ng-container>
+ 
+      <ng-container matColumnDef="col1">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>  </th>
+        <td mat-cell *matCellDef="let row"> <button class="outline-0 bg-transparent uppercase">Detalle</button> </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="col2">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>  </th>
+        <td mat-cell *matCellDef="let row"><button class="outline-0 bg-transparent text-teal-500 uppercase">Agregar</button></td>
+      </ng-container>
+
+      <ng-container matColumnDef="col3">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>  </th>
+        <td mat-cell *matCellDef="let row"><button class="outline-0 bg-transparent text-blue-600 uppercase text-start">Usar</button></td>
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  
+    </table>
+  
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Elementos por pagína"></mat-paginator>
+  </div>
+</div>    
+  

@@ -1,0 +1,70 @@
+
+<div
+  class="max-w-xl rounded overflow-hidden shadow-lg px-10 py-5 mx-12 bg-white"
+>
+  <img
+    class="w-64 h-12 mx-5"
+    src="../../../assets/img/chinchin_b-r.png"
+    alt="pagochichin logo"
+  />
+
+  <div class="px-4 py-4 justify-center">
+    <div class="text-md mb-2">Iniciar sesión</div>
+    <form class="flex flex-col" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div>
+        <mat-form-field appearance="outline" class="w-full">
+          <mat-label>Nombre de usuario</mat-label>
+          <input matInput placeholder="nombre" formControlName="usuario"/>
+        </mat-form-field>
+      </div>
+    <div>
+      <mat-form-field appearance="outline" class="w-full">
+        <mat-label>Contraseña de usuario</mat-label>
+        <input matInput placeholder="contraseña" formControlName="password" type="password"/>
+      </mat-form-field>
+    </div>  
+    <button
+      class="bg-teal-500 text-white font-bold py-2 px-4 rounded w-100"
+      type="submit"
+      [disabled]="loginForm.invalid"
+    >
+     <span *ngIf="loading == false"> Ingresar </span>
+     <div *ngIf="loading != false" class="flex flex-row justify-center text-cyan-50"> 
+      <mat-spinner [diameter]="25" color="progress" class="mat-spinner-color "></mat-spinner>
+    </div>
+    </button>
+  </form>
+  </div>
+
+  <div *ngIf="!loaded" class="grid gap-3 my-3">
+    <span
+      *ngIf="access == true"
+      class="text-center ResponseLogin py-2"
+      id="ResponseLoguin"
+    >
+      Usuario autenticado exitosamente
+    </span>
+    <span
+      *ngIf="access == false"
+      class="text-center ResponseLoginError py-2"
+      id="ResponseLoguinError"
+    >
+      Error usuario/clave invalida
+    </span>
+  </div>
+
+  <div class="flex flex-col">
+    <p class="text-xs font-light text-gray-500">
+      ¿No posees una cuenta?
+      <a href="#" class="text-xs font-light text-teal-400 hover:text-teal-700"
+        >Registrate aquí
+      </a>
+    </p>
+    <p class="text-xs font-light text-gray-500">
+      ¿Olvidaste tu contraseña?
+      <a href="#" class="text-xs font-light text-teal-400 hover:text-teal-700">
+        Recuperala aquí
+      </a>
+    </p>
+  </div>
+</div>

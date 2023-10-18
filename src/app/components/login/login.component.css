@@ -1,0 +1,17 @@
+mat-spinner-color {
+    color: #FFFFFF;
+    stroke: #FFFFFF !important;
+  }
+
+  .ResponseLoginError{
+    background-color: rgba(255, 164, 182, 0.626);
+    border-radius: 5px;
+    color: red;
+  }
+  
+  .ResponseLogin{
+    background-color: rgba(121, 218, 186, 0.809);
+    border-radius: 5px;
+    color: green;
+  }
+  
