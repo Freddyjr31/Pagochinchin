@@ -1,6 +1,9 @@
 # Pagochichin
 
-prueba tecníca Pagochinchin
+prueba técnica Pagochinchin
+
+- user: pagochinchin
+- password: pagochinchin123
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.13.
 
