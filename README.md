@@ -5,6 +5,8 @@ prueba técnica Pagochinchin
 - user: pagochinchin
 - password: pagochinchin123
 
+- Servicios consumidos: http://api.coinlayer.com/live (recurso de confianza para obtener datos precisos del mercado de criptomonedas)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.13.
 
 ## Development server
